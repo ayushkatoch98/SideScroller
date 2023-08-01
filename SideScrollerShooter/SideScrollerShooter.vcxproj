@@ -130,7 +130,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="LevelGenerator.cpp" />
+    <ClCompile Include="LevelOne.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SideScrollerShooter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="references.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="LevelGenerator.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SideScrollerShooter.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
