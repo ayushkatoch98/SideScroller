@@ -4,8 +4,8 @@ Creating 3 games in 3 days using SFML & C++
 # SideScroller
 
 # Screenshots
-![alt text](https://github.com/ayushkatoch98/SideScrollerShooter/blob/master/screenshots/1.png)
-![alt text](https://github.com/ayushkatoch98/SideScrollerShooter/blob/master/screenshots/2.png)
+![alt text](https://github.com/ayushkatoch98/SideScrollerShooter/blob/master/screenshots/4.png)
+![alt text](https://github.com/ayushkatoch98/SideScrollerShooter/blob/master/screenshots/3.png)
 
 
 # References 
