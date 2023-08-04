@@ -23,8 +23,8 @@ Enemy::Enemy(sf::RenderWindow& window, sf::Texture* texture, Player& target, sf:
 	this->enemy.setTexture(*this->texture);
 	this->enemy.setPosition(this->initialPos);
 	this->enemy.setTextureRect(sf::IntRect(0, 0, 41, 65));
-	this->enemy.scale(PLAYER_SCALE, PLAYER_SCALE);
 	this->enemy.setOrigin(this->enemy.getGlobalBounds().width / 2, this->enemy.getGlobalBounds().height / 2);
+	this->enemy.scale(PLAYER_SCALE, PLAYER_SCALE);
 	this->enemy.setColor(sf::Color::Red);
 
 	this->grounded = false;
@@ -176,7 +176,8 @@ void Enemy::collisionGround(std::vector<std::vector<Tile>> tiles) {
 
 	sf::FloatRect enemyBound = this->enemy.getGlobalBounds();
 
-	for (int y = 0; y < floorStart; y++) {
+	int y = floor(this->enemy.getPosition().y / (TILE_SCALE * TILE_SIZE)) + 1;
+	//for (int y = 0; y < floorStart; y++) {
 
 		if (tiles[y][x].sprite != nullptr) {
 			if (tiles[y][x].sprite->getGlobalBounds().intersects(enemyBound)) {
@@ -184,7 +185,7 @@ void Enemy::collisionGround(std::vector<std::vector<Tile>> tiles) {
 				return;
 			}
 
-		}
+		//}
 	}
 
 	this->grounded = false;

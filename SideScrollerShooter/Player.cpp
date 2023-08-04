@@ -23,9 +23,9 @@ Player::Player(sf::RenderWindow &window, sf::Texture *texture, sf::Font *font){
 
 	this->player.setTexture(*this->texture);
 	this->player.setPosition(sf::Vector2f(300.f, 300.f));
-	this->player.setTextureRect(sf::IntRect(0, 0, 41, 65));
-	this->player.scale(PLAYER_SCALE, PLAYER_SCALE);
+	this->player.setTextureRect(sf::IntRect(0, 0, 56, 56));
 	this->player.setOrigin( this->player.getGlobalBounds().width / 2 , this->player.getGlobalBounds().height / 2 );
+	this->player.scale(PLAYER_SCALE, PLAYER_SCALE);
 
 	this->grounded = false;
 	this->attack = false;
@@ -194,7 +194,9 @@ void Player::collisionGround(std::vector<std::vector<Tile>> tiles) {
 
 	sf::FloatRect playerBound = this->player.getGlobalBounds();
 
-	for (int y = 0; y < floorStart; y++) {
+	int y = floor(this->player.getPosition().y / (TILE_SCALE * TILE_SIZE)) + 1;
+
+	//for (int y = 0; y < floorStart; y++) {
 
 		if (tiles[y][x].sprite != nullptr) {
 			if (tiles[y][x].sprite->getGlobalBounds().intersects(playerBound)) {
@@ -203,7 +205,7 @@ void Player::collisionGround(std::vector<std::vector<Tile>> tiles) {
 			}
 		
 		}
-	}
+	//}
 
 	this->grounded = false;
 
@@ -225,7 +227,7 @@ void Player::collisionAttack(std::vector<Enemy*> enemies) {
 		playerBound.width = abs(playerBound.width - ((1.9 * x)));
 
 		if (playerBound.intersects(enemies[i]->getEnemy().getGlobalBounds())) {
-			//if (this->attack) {
+			
 			if (enemies[i]->hit()) {
 				enemies.erase(enemies.begin() + i, enemies.begin() + i);
 				enemies[i]->getEnemy().setColor(sf::Color::Black);
