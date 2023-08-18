@@ -1,5 +1,7 @@
 # Challenge Run // Day 3 // Game 3
-Creating 3 games in 3 days using SFML & C++
+Creating 3 games in 3 days using SFML & C++.
+
+WIP...
 
 # SideScroller
 
